@@ -1,0 +1,37 @@
+{
+	"UntitledDroneProgrammingGame1618321955547": {
+		"name": "Untitled Drone Programming Game",
+		"items": [
+			{
+				"id": "1361618321945308841527",
+				"name": "Find a good Title",
+				"state": ""
+			},
+			{
+				"id": "1361618322070444257496",
+				"name": "Implement type \"Float\"",
+				"state": "priority"
+			}
+		],
+		"vis": "true",
+		"pin": "false"
+	},
+	"IDEAS1618322479059": {
+		"name": "IDEAS",
+		"items": [
+			{
+				"id": "1361618322629286175942",
+				"name": "Only command execution steps \"cost ticks\" -> the \"CPU\" moves step by step by it's own and is stopped when calling a funcref. THe funcref controls when the CPU can continue",
+				"state": "submitted"
+			}
+		],
+		"vis": "true",
+		"pin": "false"
+	},
+	"TitleIdeas1618322518962": {
+		"name": "Title Ideas",
+		"items": [],
+		"vis": "true",
+		"pin": "false"
+	}
+}

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://gui/script_editor/LoadScriptDialogScriptInstance.gd" type="Script" id=1]
+[ext_resource path="res://assets/icons/file.png" type="Texture" id=2]
+
+[node name="MarginContainer" type="MarginContainer"]
+margin_right = 229.197
+margin_bottom = 55.5803
+custom_constants/margin_right = 10
+custom_constants/margin_top = 2
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 20.0
+margin_top = 2.0
+margin_right = 219.0
+margin_bottom = 53.0
+custom_constants/hseparation = 20
+text = "my_script.script"
+icon = ExtResource( 2 )
+flat = true

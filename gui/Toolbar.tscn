@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://gui/TimeLabel.gd" type="Script" id=1]
+[ext_resource path="res://gui/Toolbar.gd" type="Script" id=4]
+
+[node name="Toolbar" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -4.0
+grow_vertical = 0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1021.0
+margin_bottom = 593.0
+custom_constants/margin_right = 26
+custom_constants/margin_left = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_left = 20.0
+margin_right = 988.0
+margin_bottom = 586.0
+grow_horizontal = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Drones" type="Button" parent="MarginContainer/HBoxContainer"]
+margin_right = 58.0
+margin_bottom = 586.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = "Drones"
+flat = true
+
+[node name="Editor" type="Button" parent="MarginContainer/HBoxContainer"]
+margin_left = 62.0
+margin_right = 111.0
+margin_bottom = 586.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = "Editor"
+flat = true
+
+[node name="Spawn" type="Button" parent="MarginContainer/HBoxContainer"]
+margin_left = 115.0
+margin_right = 210.0
+margin_bottom = 586.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = "Spawn Drone"
+flat = true
+
+[node name="Time" type="Label" parent="MarginContainer/HBoxContainer"]
+margin_left = 214.0
+margin_top = 286.0
+margin_right = 968.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 2
+valign = 1
+script = ExtResource( 1 )
+
+[connection signal="button_down" from="MarginContainer/HBoxContainer/Drones" to="." method="_on_Drones_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/Editor" to="." method="_on_Editor_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/Spawn" to="." method="_on_Spawn_button_down"]

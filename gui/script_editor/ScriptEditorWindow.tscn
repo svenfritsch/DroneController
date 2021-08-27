@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/fonts/kongtext.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/icons/carrot_down.png" type="Texture" id=2]
+[ext_resource path="res://assets/theme/pixel_art.res" type="Theme" id=3]
+[ext_resource path="res://gui/script_editor/FileMenuButton.gd" type="Script" id=4]
+[ext_resource path="res://gui/script_editor/RunMenuButton.gd" type="Script" id=5]
+[ext_resource path="res://scripting/ScriptEdit.gd" type="Script" id=6]
+
+[node name="CodeEditorWindow" type="WindowDialog"]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -234.5
+margin_right = 300.0
+margin_bottom = 234.5
+rect_min_size = Vector2( 600, 300 )
+theme = ExtResource( 3 )
+window_title = "Editor"
+resizable = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.318909
+margin_top = -0.318893
+margin_right = -0.318909
+margin_bottom = -0.318909
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+margin_right = 600.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+rect_clip_content = true
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -6.0
+margin_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
+custom_constants/margin_right = 8
+custom_constants/margin_top = 12
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 14
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel/MarginContainer"]
+margin_left = 8.0
+margin_top = 12.0
+margin_right = 592.0
+margin_bottom = 63.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+
+[node name="Run" type="MenuButton" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer"]
+margin_right = 66.1971
+margin_bottom = 51.5803
+text = "Run"
+icon = ExtResource( 2 )
+script = ExtResource( 5 )
+
+[node name="File" type="MenuButton" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer"]
+margin_left = 70.0
+margin_right = 134.197
+margin_bottom = 51.5803
+text = "File"
+icon = ExtResource( 2 )
+switch_on_hover = true
+script = ExtResource( 4 )
+text_edit_path = NodePath("../../../../ScriptEdit")
+
+[node name="ScriptEdit" type="TextEdit" parent="VBoxContainer"]
+margin_top = 54.0
+margin_right = 600.0
+margin_bottom = 432.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+script = ExtResource( 6 )
+
+[node name="ErrorLabel" type="RichTextLabel" parent="VBoxContainer"]
+margin_top = 436.0
+margin_right = 600.0
+margin_bottom = 468.0
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
+custom_colors/default_color = Color( 0.996078, 0.45098, 0.301961, 1 )
+text = "Test 123"

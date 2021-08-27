@@ -1,0 +1,53 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "TextEdit",
+"class": "ScriptEdit",
+"language": "GDScript",
+"path": "res://scripting/ScriptEdit.gd"
+}, {
+"base": "Node",
+"class": "ScriptExecutor",
+"language": "GDScript",
+"path": "res://scripting/ScriptExecutor.gd"
+} ]
+_global_script_class_icons={
+"ScriptEdit": "",
+"ScriptExecutor": ""
+}
+
+[application]
+
+config/name="Drone Controller"
+run/main_scene="res://ExampleScene.tscn"
+config/icon="res://assets/textures/icon.png"
+
+[autoload]
+
+Globals="*res://Globals.gd"
+Time="*res://Time.gd"
+Clock="*res://Clock.gd"
+ScriptParser="*res://scripting/ScriptParser.gd"
+
+[debug]
+
+settings/stdout/print_fps=true
+
+[display]
+
+window/size/fullscreen=true
+mouse_cursor/custom_image="res://assets/icons/Cursor_2.png"
+
+[rendering]
+
+2d/snapping/use_gpu_pixel_snap=true
+environment/default_environment="res://default_env.tres"
+quality/2d/use_pixel_snap=true
